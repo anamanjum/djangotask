@@ -1,0 +1,32 @@
+<form action="" method="post" >
+    {% csrf_token %}
+    USERNAME<input type="text" name="username" /><br>
+    Email<input type="email" name="email" required /><br>
+    PASSWORD<input type="password" name="password" required /><br>
+    RE-PASSWORD<input type="password" name="rpassword" required /><br>
+    FIRST_NAME<input type="text" name="fname" required /><br>
+    LAST_NAME<input type="text" name="lname" required /><br>
+    <input type="radio" name="gender" checked>Male 
+    <input type="radio" name="gender">Female
+    <br>
+    Select City:-<select>
+        <option>Select City</option>
+        <option selected>India</option>
+        <option>Americation</option>
+        <option>Russia</option>
+    </select>
+    <br>
+    <br><input type="checkbox" >I agree with terms and conditions<br>
+    <br><input type="checkbox" >I want to recieve the newsletter<br>
+    <br>
+    <input type="submit" value="REGISTER" />
+</form>
+{%if messages%}
+{%for message in messages%}
+<script>
+{%if message.tags%}
+    window.alert('{{message}}');
+{%endif%}
+</script>
+{%endfor%}
+{%endif%}
